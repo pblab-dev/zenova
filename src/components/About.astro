@@ -1,0 +1,153 @@
+---
+const { title, data1, about1, about2 } = Astro.props;
+---
+
+<section class="bg-white pt-10" id="about">
+  <slot />
+  <div class="flex flex-wrap">
+    <div class="w-full px-4">
+      <div class="mx-auto max-w-[520px] text-center">
+        <span
+          class="text-primary mb-2 block text-lg font-semibold text-gray-900"
+          >SOBRE A</span
+        >
+        <h2
+          class="dm-serif-display-regular-italic text-gray-900 text-5xl mb-4 font-bold text-gray-600 sm:text-4xl md:text-5xl"
+        >
+          {title ? title : "Zenova"}
+        </h2>
+        <p class="text-base text-gray-600">
+          {
+            data1
+              ? data1
+              : "Eleve o nível do seu perfil com Design e Social Media de excelência! Na Zenova, somos especialistas em potencializar a presença online de empresas como a sua. Com uma abordagem centrada no design e social media, capacitamos nossos clientes a conquistarem o sucesso digital que desejam"
+          }
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mx-auto max-w-screen-xl items-center px-4 py-8 lg:grid lg:grid-cols-4 lg:gap-16 lg:px-6 lg:py-24 xl:gap-24"
+  >
+    <div class="col-span-2 mb-8">
+      <img src={"/Z.png"} class="w-[_400px_]" alt="logo" />
+      <!-- <p class="text-lg font-medium text-purple-500 text-purple-600">
+        Aumente Sua Credibilidade
+      </p>
+      <h2
+        class="mb-4 mt-3 text-3xl font-extrabold tracking-tight text-gray-600 text-gray-900 md:text-3xl"
+      >
+        Seu negócio precisa de visibilidade?
+      </h2>
+      <p class="font-light text-gray-400 text-gray-500 sm:text-xl">
+        A principal vantagem de nossos planos é elevar a credibilidade do seu
+        perfil a níveis impressionantes. Sabemos que números são a linguagem da
+        confiança, e estamos aqui para garantir que a sua fale alto e claro.
+      </p> -->
+    </div>
+    <div class="col-span-2">
+      <div>
+        <h2
+          class="dm-serif-display-regular-italic text-gray-900 text-5xl mb-4 font-bold text-gray-600 sm:text-3xl md:text-3xl text-center sm:text-left md:text-left"
+        >
+          Por que nos escolher?
+        </h2>
+      </div>
+      <div
+        class="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0"
+      >
+        <div
+          class="flex flex-row flex-col items-center text-center md:items-start md:text-left"
+        >
+          <!-- {
+          about2 ? (
+            <i
+              class="fa-solid fa-lock mb-5 text-purple-500 text-purple-600"
+              style="font-size: 45px"
+            />
+          ) : (
+            <i
+              class="fa-solid fa-dollar-sign mb-5 text-purple-500 text-purple-600"
+              style="font-size: 45px"
+            />
+          )
+        } -->
+          <h3 class="mb-2 text-2xl font-bold text-gray-900">
+            {about1 ? about1 : "Impacto Visual Inigualável:"}
+          </h3>
+          <p class="font-light text-gray-400 text-gray-900">
+            {
+              about2
+                ? about2
+                : "Criamos conteúdo visual que não apenas atrai, mas também envolve e cativa o público alvo da sua empresa. Cada peça é meticulosamente elaborada para garantir que sua marca se destaque em meio ao cenário online."
+            }
+          </p>
+        </div>
+        <div
+          class="flex flex-row flex-col items-center text-center md:items-start md:text-left"
+        >
+          <!--  <i
+          class="fa-solid fa-bolt-lightning mb-5 text-purple-500 text-purple-600"
+          style="font-size: 45px"></i> -->
+          <h3 class="mb-2 text-2xl font-bold text-gray-900">
+            Estratégias Sob Medida:
+          </h3>
+          <p class="font-light text-gray-400 text-gray-900">
+            Reconhecemos que cada negócio é único. Por isso, nossas soluções são
+            totalmente personalizadas para atender às necessidades específicas
+            da sua empresa. Não se trata apenas de ser visto, mas de ser
+            lembrado.
+          </p>
+        </div>
+        <div
+          class="flex flex-row flex-col items-center text-center md:items-start md:text-left"
+        >
+          <h3 class="mb-2 text-2xl font-bold text-gray-900">Sucesso Online:</h3>
+          <p class="font-light text-gray-400 text-gray-900">
+            Nossa missão é sua conquista. Trabalhamos incansavelmente para
+            fornecer soluções criativas e estratégicas que impulsionam o seu
+            sucesso na internet. Seja aumentando a sua visibilidade, construindo
+            uma comunidade engajada ou impulsionando as suas vendas, estamos
+            aqui para fazer acontecer.
+          </p>
+        </div>
+        <div
+          class="flex flex-row flex-col items-center text-center md:items-start md:text-left"
+        >
+          <h3 class="mb-2 text-2xl font-bold text-gray-900">
+            O que oferecemos:
+          </h3>
+          <p class="font-light text-gray-900 text-gray-900">
+            <p class="font-light text-gray-900 text-gray-900">
+              + Design de alto impacto para suas campanhas online.
+            </p>
+            <p class="font-light text-gray-900 text-gray-900">
+              + Estratégias de social media personalizadas para impulsionar o
+              envolvimento do público.
+            </p>
+            <p class="font-light text-gray-900 text-gray-900">
+              + Conteúdo visual excepcional que conta a história da sua marca de
+              forma memorável.
+            </p>
+            <p class="font-light text-gray-900 text-gray-900">
+              + Resultados mensuráveis e relatórios detalhados para garantir
+              transparência e eficácia.
+            </p>
+          </p>
+
+          <p class="font-light text-gray-900 text-gray-900">
+            + Seja o Próximo Sucesso Digital:
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-wrap justify-center pb-10">
+    <p class="font-semibold text-black max-w-[70%] text-center text-2xl">
+      Junte-se a nós nessa jornada para otimizar sua presença online e
+      impulsionar o crescimento do seu negócio. Descubra como a Zenova pode
+      transformar sua estratégia online. Entre em contato hoje mesmo para uma
+      consulta personalizada e dê o próximo passo rumo ao sucesso online!
+    </p>
+  </div>
+</section>
