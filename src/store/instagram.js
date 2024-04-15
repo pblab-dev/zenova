@@ -17,7 +17,7 @@ const staticStore = {
       id: 2,
       title: "01 CARROSSEL",
       description:
-        "Carrossel (até 10 páginas) comdesign atraente e alinhadoa sua identidade visual",
+        "Carrossel (até 2 páginas) com design atraente e alinhadoa sua identidade visual",
       line1: "- Criação de conteúdo estratégico",
       line2: "- Criação de Copy / texto",
       line3: "- Criação de legendas atrativas",
@@ -28,7 +28,7 @@ const staticStore = {
       id: 3,
       title: "PACOTE 10 POSTS",
       description:
-        "10 posts com designatraente e alinhado asua identidade visual",
+        "10 posts com design atraente e alinhado a sua identidade visual",
       line1: "- Criação de conteúdo estratégico",
       line2: "- Criação de Copy / texto",
       line3: "- Criação de legendas atrativas",
@@ -48,14 +48,14 @@ const staticStore = {
     },
     {
       id: 5,
-      title: "SOCIAL MEDIA",
+      title: "5 SOCIAL MEDIA",
       description:
-        "Calendário de conteúdo + 16 posts e 4 carrosséis + 20 legenda",
+        "Calendário de conteúdo + 16 posts e 4 carrosséis + 4 legenda",
       line1: "+ Criação de conteúdo estratégico",
       line2: "+ Criação de Copy / texto",
       line3: "+ Criação de legendas atrativas",
       line4: "+ Criação de design profissional",
-      price: 999.9,
+      price: 997.9,
     },
     {
       id: 6,

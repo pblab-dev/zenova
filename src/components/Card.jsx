@@ -173,7 +173,7 @@ function Card(props) {
         <div class="flex items-center justify-center">
           <a
             target="_blank"
-            href="https://api.whatsapp.com/send?phone=554891840425&text=Ol%C3%A1,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+            href="https://api.whatsapp.com/send?1=pt_BR&phone=5541995662027"
             class="rounded bg-[_#14de00_] px-4 py-2 font-bold text-white hover:bg-[_#b003b5_]"
           >
             Falar com Especialista
