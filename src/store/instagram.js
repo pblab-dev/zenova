@@ -17,7 +17,7 @@ const staticStore = {
       id: 2,
       title: "01 CARROSSEL",
       description:
-        "Carrossel (até 2 páginas) com design atraente e alinhadoa sua identidade visual",
+        "Carrossel (até 2 páginas) com design atraente e alinhado a sua identidade visual",
       line1: "- Criação de conteúdo estratégico",
       line2: "- Criação de Copy / texto",
       line3: "- Criação de legendas atrativas",
