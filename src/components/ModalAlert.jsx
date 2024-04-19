@@ -100,6 +100,7 @@ function ModalAlert(props) {
 		qrCodePix.base64().then((res) => {
 			setbase64(res)
 		}) */
+    console.log("modal", props.data);
   }, []);
   return (
     <div class="fixed left-0 top-0 z-20 flex h-full min-h-screen w-full items-center justify-center bg-black bg-opacity-90 px-4 py-5">
