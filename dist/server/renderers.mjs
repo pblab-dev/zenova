@@ -1,6 +1,31 @@
 import React, { createElement } from 'react';
 import ReactDOM from 'react-dom/server';
 
+const contexts = new WeakMap();
+
+const ID_PREFIX = 'r';
+
+function getContext(rendererContextResult) {
+	if (contexts.has(rendererContextResult)) {
+		return contexts.get(rendererContextResult);
+	}
+	const ctx = {
+		currentIndex: 0,
+		get id() {
+			return ID_PREFIX + this.currentIndex.toString();
+		},
+	};
+	contexts.set(rendererContextResult, ctx);
+	return ctx;
+}
+
+function incrementId(rendererContextResult) {
+	const ctx = getContext(rendererContextResult);
+	const id = ctx.id;
+	ctx.currentIndex++;
+	return id;
+}
+
 /**
  * Astro passes `children` as a string of HTML, so we need
  * a wrapper `div` to render that content as VNodes.
@@ -27,31 +52,6 @@ const StaticHtml = ({ value, name, hydrate = true }) => {
  */
 StaticHtml.shouldComponentUpdate = () => false;
 
-const contexts = new WeakMap();
-
-const ID_PREFIX = 'r';
-
-function getContext(rendererContextResult) {
-	if (contexts.has(rendererContextResult)) {
-		return contexts.get(rendererContextResult);
-	}
-	const ctx = {
-		currentIndex: 0,
-		get id() {
-			return ID_PREFIX + this.currentIndex.toString();
-		},
-	};
-	contexts.set(rendererContextResult, ctx);
-	return ctx;
-}
-
-function incrementId(rendererContextResult) {
-	const ctx = getContext(rendererContextResult);
-	const id = ctx.id;
-	ctx.currentIndex++;
-	return id;
-}
-
 const opts = {
 						experimentalReactChildren: false
 					};
@@ -74,6 +74,11 @@ async function check(Component, props, children) {
 		return Component['$$typeof'].toString().slice('Symbol('.length).startsWith('react');
 	}
 	if (typeof Component !== 'function') return false;
+	if (Component.name === 'QwikComponent') return false;
+
+	// Preact forwarded-ref components can be functions, which React does not support
+	if (typeof Component === 'function' && Component['$$typeof'] === Symbol.for('react.forward_ref'))
+		return false;
 
 	if (Component.prototype != null && typeof Component.prototype.render === 'function') {
 		return React.Component.isPrototypeOf(Component) || React.PureComponent.isPrototypeOf(Component);
@@ -105,7 +110,7 @@ async function check(Component, props, children) {
 }
 
 async function getNodeWritable() {
-	let nodeStreamBuiltinModuleName = 'stream';
+	let nodeStreamBuiltinModuleName = 'node:stream';
 	let { Writable } = await import(/* @vite-ignore */ nodeStreamBuiltinModuleName);
 	return Writable;
 }
@@ -139,7 +144,8 @@ async function renderToStaticMarkup(Component, props, { default: children, ...sl
 	};
 	const newChildren = children ?? props.children;
 	if (children && opts.experimentalReactChildren) {
-		const convert = await import('./chunks/vnode-children_3769332a.mjs').then((mod) => mod.default);
+		attrs['data-react-children'] = true;
+		const convert = await import('./chunks/vnode-children_c120ba3e.mjs').then((mod) => mod.default);
 		newProps.children = convert(children);
 	} else if (newChildren != null) {
 		newProps.children = React.createElement(StaticHtml, {
