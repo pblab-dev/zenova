@@ -7,7 +7,11 @@ function Card(props) {
 
   const { id, title, description, line1, line2, line3, line4, price } =
     props.store.value.products.find((e) => e.id == props.id);
-
+  console.log(
+    "card",
+    props.id,
+    props.store.value.products.find((e) => e.id == props.id)
+  );
   return (
     <div
       style={{ maxWidth: 300 }}

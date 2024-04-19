@@ -99,6 +99,7 @@ function ModalAlert(props) {
 		qrCodePix.base64().then((res) => {
 			setbase64(res)
 		}) */
+<<<<<<< HEAD
 	}, [])
 	return (
 		<div class="fixed left-0 top-0 z-20 flex h-full min-h-screen w-full items-center justify-center bg-black bg-opacity-90 px-4 py-5">
@@ -188,6 +189,185 @@ function ModalAlert(props) {
 						action=""
 						onSubmit={async (e) => {
 							e.preventDefault()
+=======
+    console.log("modal", props.data);
+  }, []);
+  return (
+    <div class="fixed left-0 top-0 z-20 flex h-full min-h-screen w-full items-center justify-center bg-black bg-opacity-90 px-4 py-5">
+      {step == "_a" && (
+        <div class="w-full max-w-[570px] rounded-[20px] bg-white px-8 py-12 text-center md:px-[70px] md:py-[60px]">
+          <h3 class="mb-4 text-2xl font-semibold text-gray-600">
+            Você escolheu o {title}
+          </h3>
+          <span class="bg-primary mx-auto mb-6 inline-block h-1 w-[90px] rounded"></span>
+          <h3 class="mb-4 text-2xl font-semibold text-gray-500">{title}</h3>
+          <p class="font-light text-gray-400 text-gray-500 sm:text-lg">
+            {description}
+          </p>
+          <div class="my-8 flex items-baseline justify-center">
+            <span class="mr-2 text-5xl font-extrabold text-gray-500">
+              R$ {price}
+            </span>
+            {/* <span class="text-gray-500 text-gray-500 text-gray-400">/month</span> */}
+          </div>
+          <ul role="list" class="mb-8 space-y-4 text-left text-gray-500">
+            <li class="flex items-center space-x-3">
+              {line1.indexOf("+") > -1 ? (
+                <svg
+                  class="h-5 w-5 flex-shrink-0 text-green-400 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              ) : (
+                <svg
+                  class="h-5 w-5 flex-shrink-0 text-green-400 text-green-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 48 48"
+                  id="Close"
+                >
+                  <path
+                    d="M38 12.83 35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"
+                    fill="#d85b53"
+                    class="color000000 svgShape"
+                  ></path>
+                  <path fill="none" d="M0 0h48v48H0z"></path>
+                </svg>
+              )}
+              <span>{line1.replace("-", "").replace("+", "")}</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              {line2.indexOf("+") > -1 ? (
+                <svg
+                  class="h-5 w-5 flex-shrink-0 text-green-400 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              ) : (
+                <svg
+                  class="h-5 w-5 flex-shrink-0 text-green-400 text-green-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 48 48"
+                  id="Close"
+                >
+                  <path
+                    d="M38 12.83 35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"
+                    fill="#d85b53"
+                    class="color000000 svgShape"
+                  ></path>
+                  <path fill="none" d="M0 0h48v48H0z"></path>
+                </svg>
+              )}
+              <span>{line2.replace("-", "").replace("+", "")}</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              {line3.indexOf("+") > -1 ? (
+                <svg
+                  class="h-5 w-5 flex-shrink-0 text-green-400 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              ) : (
+                <svg
+                  class="h-5 w-5 flex-shrink-0 text-green-400 text-green-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 48 48"
+                  id="Close"
+                >
+                  <path
+                    d="M38 12.83 35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"
+                    fill="#d85b53"
+                    class="color000000 svgShape"
+                  ></path>
+                  <path fill="none" d="M0 0h48v48H0z"></path>
+                </svg>
+              )}
+              <span>{line3.replace("-", "").replace("+", "")}</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              {line4.indexOf("+") > -1 ? (
+                <svg
+                  class="h-5 w-5 flex-shrink-0 text-green-400 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              ) : (
+                <svg
+                  class="h-5 w-5 flex-shrink-0 text-green-400 text-green-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 48 48"
+                  id="Close"
+                >
+                  <path
+                    d="M38 12.83 35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17 12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z"
+                    fill="#d85b53"
+                    class="color000000 svgShape"
+                  ></path>
+                  <path fill="none" d="M0 0h48v48H0z"></path>
+                </svg>
+              )}
+              <span>{line4.replace("-", "").replace("+", "")}</span>
+            </li>
+          </ul>
+          <div class="-mx-3 flex flex-wrap">
+            <div class="w-1/2 px-3">
+              <button
+                onClick={() => {
+                  props.setEnabled(false);
+                }}
+                class="block w-full rounded-lg border border-[#E9EDF9] p-3 text-center text-base font-medium text-gray-500 transition hover:border-red-600 hover:bg-red-600 hover:text-white"
+              >
+                Cancelar
+              </button>
+            </div>
+            <div class="w-1/2 px-3">
+              <button
+                onClick={() => setStep("_b")}
+                class="block w-full rounded-lg border border-[#E9EDF9] p-3 text-center text-base font-medium text-gray-500 transition hover:border-green-600 hover:bg-green-600 hover:text-white"
+              >
+                Confirmar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {step == "_b" && (
+        <div class="w-full max-w-[570px] rounded-[20px] bg-white px-8 py-12 text-center md:px-[70px] md:py-[60px]">
+          <h3 class="mb-10 pb-2 text-xl font-bold text-gray-600 sm:text-2xl">
+            Confirme os dados
+          </h3>
+          <form
+            action=""
+            onSubmit={async (e) => {
+              e.preventDefault();
+>>>>>>> 2160e8e (f)
 
 							let name = e.target[0].value
 							let whatsapp = e.target[1].value
