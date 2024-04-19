@@ -17,7 +17,7 @@ const staticStore = {
       id: 2,
       title: "01 CARROSSEL",
       description:
-        "Carrossel (até 2 páginas) com design atraente e alinhado a sua identidade visual",
+        "Carrossel com design atraente e alinhado a sua identidade visual",
       line1: "- Criação de conteúdo estratégico",
       line2: "- Criação de Copy / texto",
       line3: "- Criação de legendas atrativas",
@@ -48,9 +48,9 @@ const staticStore = {
     },
     {
       id: 5,
-      title: "5 SOCIAL MEDIA",
+      title: "PACOTE SOCIAL MEDIA",
       description:
-        "Calendário de conteúdo + 16 posts e 4 carrosséis + 4 legenda",
+        "Calendário de conteúdo + 16 posts e 4 carrosséis + 20 legendas",
       line1: "+ Criação de conteúdo estratégico",
       line2: "+ Criação de Copy / texto",
       line3: "+ Criação de legendas atrativas",
